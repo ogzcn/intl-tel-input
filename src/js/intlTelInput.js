@@ -118,13 +118,13 @@ class Iti {
     // Note: to target Android Mobiles (and not Tablets), we must find 'Android' and 'Mobile'
     this.isMobile = /Android.+Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-    if (this.isMobile) {
+    /*if (this.isMobile) {
       // trigger the mobile dropdown css
       document.body.classList.add('iti-mobile');
 
       // on mobile, we want a full screen dropdown, so we must append it to the body
       if (!this.options.dropdownContainer) this.options.dropdownContainer = document.body;
-    }
+    }*/
 
     // these promises get resolved when their individual requests complete
     // this way the dev can do something like iti.promise.then(...) to know when all requests are
@@ -1074,7 +1074,7 @@ class Iti {
 
     // remove menu from container
     if (this.options.dropdownContainer) {
-      if (!this.isMobile) window.removeEventListener('scroll', this._handleWindowScroll);
+      //if (!this.isMobile) window.removeEventListener('scroll', this._handleWindowScroll);
       if (this.dropdown.parentNode) this.dropdown.parentNode.removeChild(this.dropdown);
     }
 
